@@ -29,11 +29,11 @@ app.set('currentDelivery', {
 
 app.use(cors())
 app.use(express.json())
+app.use(require('./src/routes/main'))
 app.use('/api/users', require('./src/routes/userRoute'))
 app.use('/api/pedidos', require('./src/routes/pedidoRoute'))
 app.use('/api/entregas', require('./src/routes/entregaRoute'))
 app.use('/api/menu', require('./src/routes/menuRoute'))
-
 
 
 
