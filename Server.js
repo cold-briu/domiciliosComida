@@ -35,7 +35,7 @@ app.use('/api/pedidos', require('./src/routes/pedidoRoute'))
 app.use('/api/entregas', require('./src/routes/entregaRoute'))
 app.use('/api/menu', require('./src/routes/menuRoute'))
 
-app.get('/', (req, res) => res.send('uelcom to comida rapida'))
+// app.get('/', (req, res) => res.send('uelcom to comida rapida'))
 
 
 app.listen(process.env.PORT || 5000, () => { console.log(`\n· ${config.projectName} server running on... \n`) })
