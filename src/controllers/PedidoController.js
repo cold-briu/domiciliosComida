@@ -4,6 +4,15 @@ const Entregas = require('../models/EntregaModel')
 exports.proceed = async (req, res) => {
     try {
 
+        const currentOrder = await Pedidos.findOne({ orderId: req.params.id })
+        console.log(currentOrder);
+
+        const newDelivery = await Entregas({ ...req.body, userEmail: currentOrder.userEmail, orderId: currentOrder.orderId })
+        await newDelivery.save()
+        res.send(`recibido! deliv :
+        ${newDelivery}`)
+
+
     } catch (error) {
         console.error("error on proceed", error);
     }

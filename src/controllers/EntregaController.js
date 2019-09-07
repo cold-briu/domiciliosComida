@@ -1,5 +1,18 @@
 const Entregas = require('../models/EntregaModel')
 
+exports.complete = async (req, res) => {
+    const currentEntrega = await Entregas.findOne({ deliveryId: req.params.id })
+    try {
+        currentEntrega.status = "done"
+        currentEntrega.distanceLeft = 0
+        await currentEntrega.save()
+        res.send(currentEntrega)
+
+    } catch (error) {
+        console.log("error on complete", error);
+    }
+}
+
 
 // C
 

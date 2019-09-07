@@ -9,7 +9,7 @@ router.get('/read', MenuController.read);
 router.put('/update/:id', MenuController.update);
 router.delete('/delete/:id', MenuController.delete);
 
-router.get('/add/:itemId/:userEmail/:orderId', MenuController.addToCart);
+router.get('/add/:itemId/:orderId', MenuController.addToCart);
 
 
 

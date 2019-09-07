@@ -10,5 +10,7 @@ router.get('/read', EntregaController.read);
 router.put('/update/:id', EntregaController.update);
 router.delete('/delete/:id', EntregaController.delete);
 
+router.get('/complete/:id', EntregaController.complete);
+
 
 module.exports = router;

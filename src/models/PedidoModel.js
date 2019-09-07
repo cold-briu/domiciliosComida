@@ -10,13 +10,12 @@ const pedidoSchema = Schema({
     },
 
     orderId: {
-        type: Number,
+        type: String,
         required: true
     },
 
-    status: { //required val
+    status: {
         type: String,
-        required: true,
         default: "active" //"done"
     },
 

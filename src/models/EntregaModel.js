@@ -4,7 +4,7 @@ const collectionName = 'Entrega'
 const EntregaSchema = Schema({
 
     deliveryId: {
-        type: Number,
+        type: String,
         required: true
     },
 
@@ -15,7 +15,7 @@ const EntregaSchema = Schema({
     },
 
     driverId: {
-        type: Number,
+        type: String,
         required: true
     },
 
@@ -36,9 +36,9 @@ const EntregaSchema = Schema({
         default: "queued" //"preparing", "onWay", "done"
     },
 
-    products: {
-        type: Array,
-        default: ["ordersId"]
+    orderId: {
+        type: String,
+        default: "order id"
     },
 
     timestamp: {

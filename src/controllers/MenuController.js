@@ -8,7 +8,8 @@ exports.addToCart = async (req, res) => {
         const currentItem = await Menu.findOne({ itemId: req.params.itemId })
         if (currentItem.stock > 0) {
 
-            const currentOrder = await Pedidos.findOne({ orderId: req.params.orderId, userEmail: req.params.userEmail })
+
+            const currentOrder = await Pedidos.findOne({ orderId: req.params.orderId })
             currentOrder.cart.push({ itemId: req.params.itemId })
             await currentOrder.save()
             res.send(`recibido!:
