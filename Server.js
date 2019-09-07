@@ -38,4 +38,4 @@ app.use('/api/menu', require('./src/routes/menuRoute'))
 
 
 
-app.listen(app.get('port'), () => { console.log(`\n· ${config.projectName} server running on... ${app.get('port')}\n`) })
+app.listen(6060, () => { console.log(`\n· ${config.projectName} server running on... 6060\n`) })
