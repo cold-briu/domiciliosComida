@@ -3,8 +3,11 @@ const collectionName = 'user'
 
 const userSchema = Schema({
 
-    nombre: String,
-    puntos: Number,
+    nombre: { //required val
+        type: String,
+        required: true,
+        select: true //can disable default return on quer7
+    },
 
     email: { //required val
         type: String,
@@ -15,8 +18,21 @@ const userSchema = Schema({
     password: { //required val
         type: String,
         required: true,
-        select: false //can disable default return on quer7
-    }
+        select: true //can disable default return on quer7
+    },
+
+
+
+    historial: {
+        type: Array,
+        default: []
+    },
+
+    since: {
+        type: Date,
+        default: Date.now
+    },
+
 })
 
-module.exports = model(collectionName, dummySchema);
+module.exports = model(collectionName, userSchema);

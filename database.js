@@ -6,7 +6,7 @@ const URL = {
     atlas: 'mongodb+srv://admin123:vientosur@anti-cluster-ecidb.mongodb.net/test?retryWrites=true&w=majority'
 }
 
-mongoose.connect(URL.atlas, { useNewUrlParser: true })
+mongoose.connect(URL.local, { useNewUrlParser: true })
     .then(() => console.log(`· · Database is active 🌞`))
     .catch(err => console.error("moongose error 👿 :", err));
 
