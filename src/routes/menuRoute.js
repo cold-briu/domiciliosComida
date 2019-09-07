@@ -10,6 +10,9 @@ router.put('/update/:id', MenuController.update);
 router.delete('/delete/:id', MenuController.delete);
 
 router.get('/add/:itemId/:orderId', MenuController.addToCart);
+router.post('/addMany', MenuController.addMany);
+
+
 
 
 

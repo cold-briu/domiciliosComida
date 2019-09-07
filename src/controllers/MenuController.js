@@ -7,8 +7,8 @@ exports.addToCart = async (req, res) => {
     try {
         const currentItem = await Menu.findOne({ itemId: req.params.itemId })
         if (currentItem.stock > 0) {
-
-
+            currentItem.stock--
+            await currentItem.save()
             const currentOrder = await Pedidos.findOne({ orderId: req.params.orderId })
             currentOrder.cart.push({ itemId: req.params.itemId })
             await currentOrder.save()
@@ -21,6 +21,19 @@ exports.addToCart = async (req, res) => {
         }
     } catch{
         console.log("error on menuItem addtocart", err);
+    }
+}
+
+
+exports.addMany = async (req, res) => {
+    const arrInput = req.body
+    const itemsArr = arrInput.map(entry => Menu(entry))
+
+    try {
+        await itemsArr.map(entry => entry.save())
+        res.send('Se agregaron cosas');
+    } catch (error) {
+        console.log("error on createmenuItem", error);
     }
 }
 

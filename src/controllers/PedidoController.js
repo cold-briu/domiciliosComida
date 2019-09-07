@@ -1,17 +1,28 @@
 const Pedidos = require('../models/PedidoModel')
 const Entregas = require('../models/EntregaModel')
+const Users = require('../models/UserModel')
+
 
 exports.proceed = async (req, res) => {
     try {
 
         const currentOrder = await Pedidos.findOne({ orderId: req.params.id })
-        console.log(currentOrder);
+        const newDelivery = await Entregas({
+            ...req.body,
+            userEmail: currentOrder.userEmail,
+            orderId: currentOrder.orderId
+        })
 
-        const newDelivery = await Entregas({ ...req.body, userEmail: currentOrder.userEmail, orderId: currentOrder.orderId })
         await newDelivery.save()
+
+        const currentUser = await Users.findOne({ email: currentOrder.userEmail })
+        currentUser.historial.push({
+            order: currentOrder.orderId,
+            delivery: req.body.deliveryId
+        })
+        await currentUser.save()
         res.send(`recibido! deliv :
         ${newDelivery}`)
-
 
     } catch (error) {
         console.error("error on proceed", error);
