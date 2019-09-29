@@ -1,8 +1,8 @@
 const express = require('express');
 const router = express.Router();
 
-router.get('/login', (req, res) => {
-    res.render('partials/login')
-})
+router.get('/', (req, res) => res.status(200).render('pages/splash'))
+
+router.get('/login', (req, res) => res.status(200).render('partials/login'))
 
 module.exports = router;
