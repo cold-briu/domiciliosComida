@@ -1,17 +1,19 @@
 {
-  "name": "mongo_for_dummys",
+  "name": "domicilios-comida",
   "version": "1.0.0",
   "description": "",
-  "main": "web.js",
+  "main": "server.js",
   "scripts": {
-    "start": "node web.js"
+    "start": "nodemon web.js"
   },
   "keywords": [],
   "author": "",
   "license": "ISC",
   "dependencies": {
     "cors": "^2.8.5",
+    "dotenv": "^8.1.0",
     "express": "^4.17.1",
+    "express-handlebars": "^3.1.0",
     "mongoose": "^5.6.12"
   },
   "engines": {

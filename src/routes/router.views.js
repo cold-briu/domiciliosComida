@@ -1,8 +1,8 @@
 const express = require('express');
 const router = express.Router();
 
-router.get('/oe', (req, res) => res.send('uelcom to comida rapida'))
-
-
+router.get('/login', (req, res) => {
+    res.render('partials/login')
+})
 
 module.exports = router;

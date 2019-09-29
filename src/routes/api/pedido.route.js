@@ -2,7 +2,7 @@ const express = require('express');
 
 const router = express.Router();
 
-const PedidoController = require('../controllers/PedidoController');
+const PedidoController = require('../../controllers/pedido.controller');
 
 //crud Pedido
 router.post('/create', PedidoController.create);

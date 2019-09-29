@@ -1,7 +1,7 @@
 const express = require('express');
 const router = express.Router();
 
-const MenuController = require('../controllers/MenuController');
+const MenuController = require('../../controllers/menu.controller');
 
 //crud Menu
 router.post('/create', MenuController.create);

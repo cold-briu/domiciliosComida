@@ -2,7 +2,7 @@ const express = require('express');
 
 const router = express.Router();
 
-const EntregaController = require('../controllers/EntregaController');
+const EntregaController = require('../../controllers/entrega.controller');
 
 //crud Entrega
 router.post('/create', EntregaController.create);
