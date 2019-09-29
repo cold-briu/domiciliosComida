@@ -36,9 +36,7 @@ build/Release
 node_modules/
 jspm_packages/
 
-sandbox/
-sandbix/
-oldclient/
+secret/
 
 # TypeScript v1 declaration files
 typings/

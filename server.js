@@ -29,7 +29,7 @@ app.set('view engine', 'hbs');
 
 app.engine('hbs', hbs({
     extname: 'hbs',
-    defaultView: 'main',
+    defaultView: 'splash',
     layoutsDir: __dirname + '/views/layouts/',
     partialsDir: __dirname + '/views/partials/'
 }));
