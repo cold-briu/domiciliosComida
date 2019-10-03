@@ -1,5 +1,5 @@
 const mongoose = require('mongoose');
-const { dbHost, dbUser, dbPassword } = require('./config')
+const { dbHost, dbUser, dbPassword } = require('./config/env.config')
 
 
 const URL = {

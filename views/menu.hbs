@@ -1,1 +1,39 @@
-MENU MENUM
+<script>
+
+    //const employees =
+    (async () => {
+
+        /*
+        const $ = selector => document.querySelector(selector);
+        const response = await fetch('http://www.recipepuppy.com/api/?i=potato', { mode: 'cors' })
+
+        let data = await response.json();
+        data = data.results
+        data = data.slice(data.length - 20)
+        // let data = DATA.results
+        console.log(data);
+
+       */
+
+
+    })()
+
+
+</script>
+<main class="row text-center">
+
+    <section class="col col-9 col-md-7 col-lg-5 mx-auto bg-warning">
+        <div class="full" id="products_container">
+            <ul class="text-left">
+
+                {{#each data}}
+                <li>
+                    <h3>{{ productName }}</h3>
+                </li>
+                {{/ each}}
+
+            </ul>
+        </div>
+    </section>
+
+</main>

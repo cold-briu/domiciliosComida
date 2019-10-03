@@ -5,13 +5,15 @@ const express = require('express')
 const app = express()
 const path = require('path')
 const cors = require('cors')
-const hbs = require('express-handlebars');
+const exhbs = require('express-handlebars');
 
-const { port, projectName } = require('./config')
+const hbsConfig = require('./config/hbs.config')
+const { port, projectName } = require('./config/env.config')
 require('./database')
 
 
 //settings
+
 app.set('currentUser', {
     logged: false,
     email: "not logged"
@@ -22,17 +24,13 @@ app.set('currentDelivery', {
     status: "none"
 })
 
-app.set('views', path.join(__dirname, 'views'));
 
 //handlebars
-app.set('view engine', 'hbs');
 
-app.engine('hbs', hbs({
-    extname: 'hbs',
-    defaultView: 'splash',
-    layoutsDir: __dirname + '/views/layouts/',
-    partialsDir: __dirname + '/views/partials/'
-}));
+app.set('views', path.join(__dirname, 'views'));
+
+app.engine('hbs', exhbs.create(hbsConfig).engine);
+app.set('view engine', 'hbs');
 
 
 

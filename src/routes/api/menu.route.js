@@ -13,9 +13,4 @@ router.get('/add/:itemId/:orderId', MenuController.addToCart);
 router.post('/addMany', MenuController.addMany);
 
 
-
-
-
-
-
 module.exports = router;
