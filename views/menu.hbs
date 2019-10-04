@@ -1,38 +1,37 @@
-<script>
+{{> cart }}
 
-    //const employees =
-    (async () => {
-
-        /*
-        const $ = selector => document.querySelector(selector);
-        const response = await fetch('http://www.recipepuppy.com/api/?i=potato', { mode: 'cors' })
-
-        let data = await response.json();
-        data = data.results
-        data = data.slice(data.length - 20)
-        // let data = DATA.results
-        console.log(data);
-
-       */
-
-
-    })()
-
-
-</script>
 <main class="row text-center">
 
-    <section class="col col-9 col-md-7 col-lg-5 mx-auto bg-warning">
+    <section class="col col-9 col-md-7 col-lg-5 mx-auto p-0">
         <div class="full" id="products_container">
-            <ul class="text-left">
 
-                {{#each data}}
-                <li>
-                    <h3>{{ productName }}</h3>
-                </li>
-                {{/ each}}
 
-            </ul>
+            {{#each data}}
+
+            <div class="card_container p-3">
+
+                <div class="card">
+                    <img class="card-img-top"
+                        src="https://proxy.duckduckgo.com/iu/?u=http%3A%2F%2Fthumb10.shutterstock.com%2Fdisplay_pic_with_logo%2F250462%2F128941877%2Fstock-photo-peru-traditional-culinary-salchipapas-128941877.jpg&f=1&nofb=1"
+                        alt="Card image cap">
+                    <div class="card-body">
+                        <h4 class="card-title">{{ productName }}</h4>
+                        <p class="card-text">
+                            <strong class="text-success"> ${{ price }} pesos </strong>
+                            <br>
+                            {{ description }}
+                        </p>
+                        <a href="#" class="btn btn-sm btn-outline-primary">
+                            <i class="fas fa-plus mr-2"></i>
+                            Agregar al carrito
+                        </a>
+                    </div>
+                </div>
+
+            </div>
+
+            {{/ each}}
+
         </div>
     </section>
 

@@ -1,0 +1,60 @@
+<style>
+    .pedido_container {
+        display: flex;
+        flex-direction: column;
+        justify-content: flex-start;
+        align-content: center;
+        align-items: center;
+
+        height: 100vh;
+    }
+
+    .pedido_container .fa-hotdog {
+        margin: 0 auto;
+        font-size: 6rem;
+    }
+
+    .card a {
+        color: inherit
+    }
+</style>
+
+
+
+<div class="row text-center">
+    <div class="col col-sm-9 col-md-7 col-lg-5 mx-auto">
+
+        <main class="pedido_container full mt-3">
+
+
+            <header class="text-danger my-5">
+                <section class="brand_container outline-danger mb-5">
+                    <i class="fas fa-hotdog"></i>
+                </section>
+                <h3 class="card-title text-dark">
+                    Confirma tu pedido
+                </h3>
+            </header>
+
+            <div class="card">
+
+                <div class="card-body text-center py-5">
+
+                    <ul class=" text-left">
+                        <li>5 salchipapa sencilla</li>
+                        <li>3 mandi papa especial</li>
+                        <li>2 gaseosa light porque me engordo</li>
+                    </ul>
+
+                    <a href="/entrega">
+                        <button class="btn btn-success btn-block mt-5">
+                            Pagar
+                        </button>
+                    </a>
+
+                </div>
+            </div>
+
+        </main>
+    </div>
+</div>
