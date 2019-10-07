@@ -1,3 +1,5 @@
+<script src="/public/js/menu.js"></script>
+
 {{> cart }}
 
 <main class="row text-center">
@@ -10,7 +12,8 @@
 
             <div class="card_container p-3">
 
-                <div class="card">
+                <form class="card card_form_item" onsubmit="handleSub(event)" id={{itemId}}>
+
                     <img class="card-img-top"
                         src="https://proxy.duckduckgo.com/iu/?u=http%3A%2F%2Fthumb10.shutterstock.com%2Fdisplay_pic_with_logo%2F250462%2F128941877%2Fstock-photo-peru-traditional-culinary-salchipapas-128941877.jpg&f=1&nofb=1"
                         alt="Card image cap">
@@ -21,12 +24,19 @@
                             <br>
                             {{ description }}
                         </p>
-                        <a href="#" class="btn btn-sm btn-outline-primary">
+
+                        <input name="product" type="hidden" value={{ productName }}>
+                        <input name="price" type="hidden" value={{ price }}>
+                        <input name="itemId" type="hidden" value={{ itemId }}>
+
+
+                        <button type="submit" class="btn btn-sm btn-outline-primary card_form_btn">
                             <i class="fas fa-plus mr-2"></i>
                             Agregar al carrito
-                        </a>
+                        </button>
                     </div>
-                </div>
+
+                </form>
 
             </div>
 
